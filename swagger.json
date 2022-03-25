@@ -1,0 +1,95 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Library",
+        "description": "Library NodeJS Application API",
+        "license": "ISC"
+    },
+    "basePath": "/api/v1",
+    "tags": [{
+        "name": "book",
+        "description": "API for book in the system"
+    }],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/book/create": {
+            "post": {
+                "tags": ["Libary"],
+                "description": "Create new book in system",
+                "parameters": [{
+                    "name": "book",
+                    "in": "body",
+                    "required": true,
+                    "description": "Book that we want to create",
+                    "example": {
+                        "title": "Divina Comedia",
+                        "pages": 300,
+                        "year": 1472,
+                        "isbn": "123-456-7890-E1",
+                        "author": "Dante"
+
+                    },
+                    "schema": {
+                        "$ref": "#/definitions/Book"
+                    }
+                }],
+                "produces": [
+                    "application/json"
+                ],
+                "response": {
+                    "200": {
+                        "description": "New book was created",
+                        "examples": {
+                            "application/json": {
+                                "status": true,
+                                "message": "Book created"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Book": {
+            "required": [
+                "title",
+                "pages",
+                "year",
+                "isbn",
+                "author"
+            ],
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "uniqueItems": false,
+                    "example": "Divina Comedia"
+                },
+                "pages": {
+                    "type": "integer",
+                    "example": 300
+                },
+                "year": {
+                    "type": "integer",
+                    "example": 1472
+                },
+                "isbn": {
+                    "type": "string",
+                    "uniqueItems": false,
+                    "example": "123-456-7890-E1"
+                },
+                "author": {
+                    "type": "string",
+                    "uniqueItems": false,
+                    "example": "Dante"
+                }
+            }
+        }
+    }
+}
