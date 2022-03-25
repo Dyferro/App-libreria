@@ -72,15 +72,15 @@
             }
         },
         "/book/{isbn}": {
-            "parameters": [{
-                "name": "isbn",
-                "in": "path",
-                "required": true,
-                "description": "Book's ISBN that we want to find",
-                "type": "string"
-            }],
             "get": {
                 "tags": ["Libary"],
+                "parameters": [{
+                    "name": "isbn",
+                    "in": "path",
+                    "required": true,
+                    "description": "Book's ISBN that we want to find",
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "Book founded by ISBN",
@@ -95,15 +95,15 @@
             }
         },
         "/book/delete/{isbn}": {
-            "parameters": [{
-                "name": "isbn",
-                "in": "path",
-                "required": true,
-                "description": "Book's ISBN that we want to delete",
-                "type": "string"
-            }],
             "delete": {
                 "tags": ["Libary"],
+                "parameters": [{
+                    "name": "isbn",
+                    "in": "path",
+                    "required": true,
+                    "description": "Book's ISBN that we want to delete",
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "Book successfully deleted",
@@ -118,25 +118,25 @@
             }
         },
         "/book/update": {
-            "parameters": [{
-                "name": "book",
-                "in": "body",
-                "required": true,
-                "description": "Book that we want to update",
-                "example": {
-                    "title": "Divina Comedia",
-                    "pages": 300,
-                    "year": 1472,
-                    "isbn": "123-456-7890-E1",
-                    "author": "Dante"
-
-                },
-                "schema": {
-                    "$ref": "#/definitions/Book"
-                }
-            }],
             "put": {
                 "tags": ["Libary"],
+                "parameters": [{
+                    "name": "book",
+                    "in": "body",
+                    "required": true,
+                    "description": "Book that we want to update",
+                    "example": {
+                        "title": "Divina Comedia",
+                        "pages": 300,
+                        "year": 1472,
+                        "isbn": "123-456-7890-E1",
+                        "author": "Dante"
+
+                    },
+                    "schema": {
+                        "$ref": "#/definitions/Book"
+                    }
+                }],
                 "responses": {
                     "200": {
                         "description": "Book successfully updated",
