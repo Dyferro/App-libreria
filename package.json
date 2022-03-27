@@ -4,7 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon bin/index.js"
+        "dev": "nodemon index.js",
+        "test": "jest",
+        "test:coverage": "jest --coverage"
     },
     "keywords": [],
     "author": "",
@@ -12,5 +14,9 @@
     "dependencies": {
         "express": "^4.17.3",
         "swagger-ui-express": "^4.3.0"
+    },
+    "devDependencies": {
+        "jest": "^27.5.1",
+        "supertest": "^6.2.2"
     }
 }
