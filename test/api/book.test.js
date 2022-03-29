@@ -65,7 +65,7 @@ describe('Book', () => {
         const res = await request(server)
             .get(`/api/v1/book/${isbn}`);
         expect(res.statusCode).toEqual(200);
-        eexpect(res.body).toEqual(
+        expect(res.body).toEqual(
             expect.objectContaining({
                 book: expect.objectContaining({
                     title: expect.any(String),
